@@ -5,7 +5,8 @@ const props = defineProps<{ verse: DailyVerse }>()
 
 const humanDate = computed(() => humanizeYYMMDD(props.verse.date))
 const mp4Url = computed(
-  () => `https://r2.savefamily.net/@pastorpaulqiankunlu618/${props.verse.vid}.mp4`,
+  () =>
+    `https://go2024.simai.life/api?redirect=https://r2.savefamily.net/@pastorpaulqiankunlu618/${props.verse.vid}.mp4?metric=PastorLu&keyword=verse&type=video&bot=26&to=verse`,
 )
 const youtubeUrl = computed(
   () => `https://www.youtube.com/embed/${props.verse.vid}`,
@@ -20,6 +21,23 @@ const youtubeUrl = computed(
     </header>
 
     <section class="media-block">
+      <h2>MP4</h2>
+      <div class="media-frame">
+        <video :src="mp4Url" controls preload="metadata" />
+      </div>
+    </section>
+
+    <section class="qr-block">
+      <p class="qr-text">扫一扫 或 微信中 长按 下面的二维码，即可加卢牧师微信</p>
+      <img
+        src="https://r2.savefamily.net/OVagt1.JPG"
+        alt="卢牧师微信二维码"
+        class="qr-image"
+        loading="lazy"
+      >
+    </section>
+
+    <section class="media-block">
       <h2>YouTube</h2>
       <div class="media-frame">
         <iframe
@@ -30,13 +48,6 @@ const youtubeUrl = computed(
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
         />
-      </div>
-    </section>
-
-    <section class="media-block">
-      <h2>MP4</h2>
-      <div class="media-frame">
-        <video :src="mp4Url" controls preload="metadata" />
       </div>
     </section>
   </article>
@@ -86,5 +97,27 @@ const youtubeUrl = computed(
   width: 100%;
   height: 100%;
   border: 0;
+}
+.qr-block {
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.qr-text {
+  margin: 0 0 1rem;
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.qr-image {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 8px;
 }
 </style>

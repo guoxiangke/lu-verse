@@ -89,19 +89,19 @@ function cellDate(year: number, month: number, day: number): string {
 .calendar {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2rem;
   max-width: 960px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0.75rem;
 }
 .month-title {
-  font-size: 1.25rem;
-  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+  margin: 0 0 0.5rem;
 }
 .weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #888;
   margin-bottom: 0.25rem;
 }
@@ -112,23 +112,26 @@ function cellDate(year: number, month: number, day: number): string {
 .grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 6px;
+  gap: 4px;
 }
 .cell {
+  min-height: 56px;
   aspect-ratio: 1 / 1;
   border-radius: 6px;
-  padding: 6px;
+  padding: 4px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 0.8rem;
-  line-height: 1.2;
+  gap: 2px;
+  line-height: 1.15;
   background: #f5f5f5;
   color: #bbb;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .cell.pad {
   background: transparent;
+  min-height: 0;
 }
 .cell.has {
   background: #fff;
@@ -146,13 +149,61 @@ function cellDate(year: number, month: number, day: number): string {
 }
 .day-num {
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 .day-title {
   font-size: 0.7rem;
-  color: #666;
+  font-weight: 500;
+  color: #333;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  word-break: break-all;
+}
+
+@media (min-width: 640px) {
+  .calendar {
+    padding: 1rem;
+    gap: 2.5rem;
+  }
+  .month-title {
+    font-size: 1.25rem;
+  }
+  .weekdays {
+    font-size: 0.8rem;
+  }
+  .grid {
+    gap: 6px;
+  }
+  .cell {
+    padding: 6px;
+    min-height: 72px;
+  }
+  .day-num {
+    font-size: 0.9rem;
+  }
+  .day-title {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 420px) {
+  .day-title {
+    font-size: 0.62rem;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+  .day-num {
+    font-size: 0.78rem;
+  }
+  .grid {
+    gap: 3px;
+  }
+  .cell {
+    padding: 3px;
+    border-radius: 5px;
+  }
 }
 </style>
