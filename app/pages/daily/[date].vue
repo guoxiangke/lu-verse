@@ -15,10 +15,20 @@ const nav = computed(() => neighborsOf(items.value, dateParam))
 if (!verse.value && items.value.length > 0 && !data.value?.error) {
   throw createError({ statusCode: 404, statusMessage: 'No verse for this date', fatal: true })
 }
+
+useSeoMeta({
+  title: () => verse.value ? `每日圣经金句：${verse.value.title}` : '每日圣经金句',
+  description: () =>
+    verse.value
+      ? `${humanizeYYMMDD(verse.value.date)} 每日圣经金句：${verse.value.title}`
+      : '每日圣经金句 · 每天一句，安静你的心',
+})
 </script>
 
 <template>
   <div class="page">
+    <VerseTabs current="daily" :yymmdd="dateParam" />
+
     <p v-if="data?.error" class="error">数据拉取失败：{{ data.error }}</p>
 
     <DailyVerseDetail v-if="verse" :verse="verse" />

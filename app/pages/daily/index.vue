@@ -9,7 +9,7 @@ const hasToday = computed(() => items.value.some((it) => it.date === today))
 <template>
   <div class="page">
     <header class="page-header">
-      <h1>每日圣经经句</h1>
+      <h1>每日圣经金句</h1>
       <p class="sub">
         <NuxtLink v-if="hasToday" :to="`/daily/${today}`">查看今日（{{ humanizeYYMMDD(today) }}）</NuxtLink>
         <span v-else>今日（{{ humanizeYYMMDD(today) }}）暂无内容</span>
@@ -37,6 +37,10 @@ const hasToday = computed(() => items.value.some((it) => it.date === today))
 .sub {
   color: #666;
   margin: 0;
+}
+.sub a {
+  color: #2e7d32;
+  text-decoration: none;
 }
 .error,
 .empty {
