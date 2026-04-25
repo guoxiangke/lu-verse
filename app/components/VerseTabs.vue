@@ -24,7 +24,7 @@ const resolvedYYMMDD = computed(() => {
 const tabs = computed(() => [
   { key: 'daily' as TabType, label: '金句', to: `/daily/${resolvedYYMMDD.value}` },
   { key: 'nt' as TabType, label: '新约', to: `/nt/${resolvedMMDD.value}` },
-  { key: 'ot' as TabType, label: '旧约', to: `/ot/${resolvedMMDD.value}` },
+  { key: 'ot' as TabType, label: '同行', to: `/ot/${resolvedMMDD.value}` },
 ])
 </script>
 

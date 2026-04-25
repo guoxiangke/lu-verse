@@ -53,7 +53,7 @@ useSeoMeta({
     <article v-if="item" class="detail">
       <header class="detail-header">
         <p class="detail-date">{{ humanMMDD }}</p>
-        <h1 class="detail-title">卢牧师读新约{{ item.date }}</h1>
+        <h1 class="detail-title">卢牧师带您读新约{{ item.date }}</h1>
         <p class="detail-sub">{{ item.title }} <span v-if="item.duration">· {{ item.duration }}</span></p>
       </header>
 

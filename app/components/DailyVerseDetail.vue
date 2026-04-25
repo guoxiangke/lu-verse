@@ -17,7 +17,8 @@ const youtubeUrl = computed(
   <article class="verse-detail">
     <header class="verse-header">
       <p class="verse-date">{{ humanDate }}</p>
-      <h1 class="verse-title">{{ verse.title }}</h1>
+      <h1 class="verse-title">每日圣经金句</h1>
+      <p class="verse-sub">{{ verse.title }}</p>
     </header>
 
     <section class="media-block">
@@ -74,6 +75,11 @@ const youtubeUrl = computed(
   margin: 0;
   font-size: 1.75rem;
   font-weight: 600;
+}
+.verse-sub {
+  color: #333;
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
 }
 .media-block h2 {
   font-size: 0.95rem;
