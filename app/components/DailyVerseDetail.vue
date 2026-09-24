@@ -6,7 +6,7 @@ const props = defineProps<{ verse: DailyVerse }>()
 const humanDate = computed(() => humanizeYYMMDD(props.verse.date))
 const mp4Url = computed(
   () =>
-    `https://go2024.simai.life/api?redirect=https://r2.savefamily.net/@pastorpaulqiankunlu618/${props.verse.vid}.mp4?metric=PastorLu&keyword=verse&type=video&bot=26&to=verse`,
+    `https://go.savefamily.net/api?redirect=https://r2.savefamily.net/@pastorpaulqiankunlu618/${props.verse.vid}.mp4?metric=PastorLu&keyword=verse&type=video&bot=26&to=verse`,
 )
 const youtubeUrl = computed(
   () => `https://www.youtube.com/embed/${props.verse.vid}`,

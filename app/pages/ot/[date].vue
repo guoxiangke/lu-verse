@@ -18,7 +18,7 @@ if (!item.value && items.value.length > 0 && !data.value?.error) {
 
 const mp4Url = computed(() => {
   if (!item.value) return ''
-  return `https://go2024.simai.life/api?redirect=https://r2.savefamily.net/@pastorpaulqiankunlu618/${item.value.vid}.mp4?metric=PastorLu&keyword=ot&type=video&bot=26&to=ot`
+  return `https://go.savefamily.net/api?redirect=https://r2.savefamily.net/@pastorpaulqiankunlu618/${item.value.vid}.mp4?metric=PastorLu&keyword=ot&type=video&bot=26&to=ot`
 })
 
 const youtubeUrl = computed(() =>
